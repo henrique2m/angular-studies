@@ -1,0 +1,14 @@
+{
+  "products": [
+    {
+      "id": 2,
+      "name": "Notebook Mac Pro",
+      "price": 12000.89
+    },
+    {
+      "name": "Uno Mille",
+      "price": "20.000",
+      "id": 4
+    }
+  ]
+}
