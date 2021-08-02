@@ -1,0 +1,93 @@
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+hr {
+  height: 2px;
+  width: 10rem;
+  background: #f7931e;
+  margin: 3rem 0;
+}
+
+.slogan {
+  width: 100%;
+  height: 20.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+.slogan h2 {
+  font-size: 54px;
+  font-weight: border;
+}
+
+.slogan span {
+  font-size: 1.6rem;
+  font-weight: 500;
+
+  margin: 3rem 0;
+}
+
+ul.resume {
+  width: 100%;
+  display: flex;
+  list-style: none;
+  background: #ccc;
+}
+
+ul.resume li {
+  padding: 6.4rem;
+  color: #fff;
+  width:33.3%;
+}
+
+ul.resume li:first-child {
+  background:#303133;
+}
+
+ul.resume li:last-child {
+  background: #f7931e;
+}
+
+ul.resume li p {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+hr.last {
+  background: #fff;
+}
+
+
+ul.resume h2 {
+  font-size: 32px;
+  font-weight: border;
+  color: #fff;
+}
+
+ul.resume li button {
+  width: 14.4rem;
+  height: 4.6rem;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  border: 1px solid #fff;
+  color: #fff;
+  background: none;
+  border-radius: 25px;
+  padding: 10;
+  margin-top: 3rem;
+  transition: background 0.2s;
+  text-decoration: none;
+}
+
+ul.resume li button:hover {
+  background: #fff;
+  color: #292929;
+}
+

@@ -1,0 +1,64 @@
+<footer>
+  <ul>
+    <li>
+      <img
+        src="http://qative.com.br/wp-content/uploads/2016/07/logoQative_mini.png"
+        class="logo"
+      />
+      <p class="address">
+        106 Sul, Alameda 8, LT33 Plano Diretor Sul, Palmas - TO CEP: 77020-076 /
+        (63) 3225-7500 adm@qative.com.br
+      </p>
+      <div>
+        <img src="https://img.icons8.com/material/48/ffffff/facebook--v1.png" />
+        <img
+          src="https://img.icons8.com/material/48/ffffff/instagram-new--v1.png"
+        />
+      </div>
+    </li>
+    <li>
+      <h3 class="footer-title">Últimas notícias</h3>
+      <div class="footer-title-line"></div>
+
+      <a>2021: ano de arriscar ou ser mais cauteloso nos gastos?</a>
+      <small>3 de janeiro de 2021</small>
+
+      <a>2021: ano de arriscar ou ser mais cauteloso nos gastos?</a>
+      <small>3 de janeiro de 2021</small>
+
+      <a>2021: ano de arriscar ou ser mais cauteloso nos gastos?</a>
+      <small>3 de janeiro de 2021</small>
+    </li>
+    <li>
+      <h3 class="footer-title">Links Importantes</h3>
+      <div class="footer-title-line"></div>
+
+      <a>A qAtive</a>
+      <a>Soluções</a>
+      <a>Notícias</a>
+      <a>Contato</a>
+      <a>Suporte</a>
+      <a>Baixar o TeamViewer</a>
+      <a>Trabalhe Conosco</a>
+      <a>Política de Privacidade</a>
+    </li>
+    <li class="newsletter">
+      <h3 class="footer-title">Newsletter</h3>
+      <div class="footer-title-line"></div>
+
+      <p>Cadastre seu e-mail para receber novidades da qAtive</p>
+
+      <form>
+        <input [(ngModel)]="user.name" name="name" placeholder="Seu nome" />
+        <input
+          [(ngModel)]="user.email"
+          name="email"
+          placeholder="Seu e-mail(obrigatório)"
+          required
+        />
+        <span #spanError>{{ error.message }}</span>
+        <button (click)="handleSubmitFormNewsletter()">ENVIAR</button>
+      </form>
+    </li>
+  </ul>
+</footer>
