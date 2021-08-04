@@ -1,13 +1,13 @@
 {
-  "homepage": "https://henrique2m.github.io/Angular-Studies/",
+  "homepage": "https://henrique2m.github.io/angular-studies/",
   "name": "frontend",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build-ghpages": "ng build --prod --base-href https://henrique2m.github.io/Angular-Studies/",
-    "deploy-ghpages": "ngh --branch=hg-pages",
+    "build-ghpages": "ng build --configuration=production --base-href https://henrique2m.github.io/angular-studies/",
+    "deploy-ghpages": "angular-cli-ghpages --dir=dist/frontend",
     "watch": "ng build --watch --configuration development"
   },
   "private": true,
@@ -33,6 +33,7 @@
     "@angular/compiler-cli": "~12.1.0-",
     "@angular/localize": "^12.1.4",
     "@types/node": "^12.11.1",
-    "typescript": "~4.3.2"
+    "typescript": "~4.3.2",
+    "angular-cli-ghpages": "^1.0.0-rc.2"
   }
 }
