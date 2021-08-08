@@ -37,6 +37,7 @@ footer ul li a {
   transition: color 0.2s;
   font-size: 16px;
   line-height: 1.75;
+  text-align: center;
 }
 
 footer ul li a:hover{
@@ -121,4 +122,21 @@ footer ul li form input, button {
 
 .newsletter {
   font-size: 16px;
+}
+
+@media (max-width: 900px) {
+  footer ul {
+    flex-direction: column-reverse;
+    width: 100vw;
+    align-items: center;
+  }
+
+  footer ul li {
+    width: 100%;
+    align-items: center;
+  }
+
+  .address {
+    text-align: center;
+  }
 }
