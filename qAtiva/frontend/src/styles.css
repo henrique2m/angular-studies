@@ -1,22 +1,25 @@
 :root {
   font-size: 60%;
 }
+
 * {
   margin: 0;
   padding: 0;
   outline: 0;
   box-sizing: border-box;
 }
-html, body {
+html, body, app-root  {
   height: 100vh;
+  overflow-x:hidden;
 }
 
-body {
+app-root, body {
   background: #FFFFFF;
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
   overflow-x: hidden;
 }
 
+app-root,
 body,
 input,
 button,
@@ -32,6 +35,5 @@ button:focus {
   outline-style: none;
 }
 
-
-html, body { height: 100%; }
+app-root, 
 body { margin: 0; font-family: 'Roboto', "Helvetica Neue", sans-serif; }

@@ -15,7 +15,8 @@ footer ul {
 }
 
 .logo {
-  width: 20rem;
+  width: 100%;
+  max-width: 20rem;
 }
 
 .address {
