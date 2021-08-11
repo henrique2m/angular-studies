@@ -1,0 +1,12 @@
+.container h6, p {
+  color: #696969;
+}
+.app-modal {
+  margin-top: 2.4rem;
+  border-radius: 5px;
+  background: #ddd;
+}
+
+.app-box-button {
+  margin-top: 1.4rem;
+}

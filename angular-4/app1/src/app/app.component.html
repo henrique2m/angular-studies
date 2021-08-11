@@ -1,0 +1,36 @@
+<!-- <router-outlet></router-outlet> -->
+<app-header></app-header>
+
+<div *ngIf="gameInProgress; else gameOver">
+  <app-panel (endOfTheGame)="endOfTheGame($event)"></app-panel>
+</div>
+
+<ng-template #gameOver>
+  <div *ngIf="typeEndOfTheGame === 'defeat'; else winning" class="container">
+    <div class="row">
+      <div class="col">
+        <h3 class="alert alert-danger" role="alert">
+          Fim de jodo, faça uma revisão e tente novamente.
+        </h3>
+        <button class="btn btn-primary" (click)="startGame()">
+          Jogar Novamente
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #winning>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h3 class="alert alert-success" role="alert">
+          Parabéns! Seu esforço está sendo recompensado.
+        </h3>
+        <button class="btn btn-primary" (click)="startGame()">
+          Jogar Novamente
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-template>
