@@ -55,4 +55,17 @@ export class OffersService {
     public getOffers(): Array<Offer> {
         return this.Offers;
     }
+
+    public getOffersPromise(): Promise<Offer[]> {
+        return new Promise((resolve, reject) => {
+            const status = true;
+
+            if (status) {
+                setTimeout(() => resolve(this.Offers), 3000);
+            } else {
+                reject({ error: 404, message: 'Server not found.' });
+            }
+            resolve(this.Offers);
+        });
+    }
 }
