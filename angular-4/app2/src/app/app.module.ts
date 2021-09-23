@@ -12,6 +12,7 @@ import { FunComponent } from './fun/fun.component';
 import { RouterModule } from '@angular/router';
 
 import { ROUTES } from './app.routes';
+import { OfferComponent } from './offer/offer.component';
 
 @NgModule({
     declarations: [
@@ -20,7 +21,8 @@ import { ROUTES } from './app.routes';
         HomeComponent,
         FooterComponent,
         RestaurantsComponent,
-        FunComponent
+        FunComponent,
+        OfferComponent
     ],
     imports: [
         BrowserModule,

@@ -8,96 +8,38 @@
 
     <hr />
 
-    <div class="row">
+    <div class="row" *ngFor="let offer of offers">
         <div class="col-md-4">
             <img src="/assets/ofertas/4/img1.jpg" />
         </div>
 
         <div class="col-md-8">
             <div class="row">
-                <h4>Estância das águas</h4>
+                <h4>{{ offer.title }}</h4>
             </div>
 
             <div class="row">
-                <h5>Diversão garantida com piscinas, trilhas e muito mais.</h5>
+                <h5>{{ offer.description }}</h5>
             </div>
 
             <div class="row">
-                <p>Anunciado por: <b>Estância das águas</b></p>
+                <p>
+                    Anunciado por: <b>{{ offer.advertiser }}</b>
+                </p>
             </div>
 
             <div class="row">
-                <p>R$ 31,90</p>
+                <p>{{ offer.price | currency: 'BRL' }}</p>
             </div>
 
             <div class="row">
-                <button class="btn btn-outline-success">Ver oferta</button>
+                <button
+                    class="btn btn-outline-success"
+                    [routerLink]="['/offer', offer.id]"
+                >
+                    Ver oferta
+                </button>
             </div>
         </div>
     </div>
-
-    <hr />
-
-    <div class="row">
-        <div class="col-md-4">
-            <img src="/assets/ofertas/5/img1.jpg" />
-        </div>
-
-        <div class="col-md-8">
-            <div class="row">
-                <h4>Kart</h4>
-            </div>
-
-            <div class="row">
-                <h5>Bateria de Kart de 30 minutos.</h5>
-            </div>
-
-            <div class="row">
-                <p>Anunciado por: <b>Speed Kart</b></p>
-            </div>
-
-            <div class="row">
-                <p>R$ 54,90</p>
-            </div>
-
-            <div class="row">
-                <button class="btn btn-outline-success">Ver oferta</button>
-            </div>
-        </div>
-    </div>
-
-    <hr />
-
-    <div class="row">
-        <div class="col-md-4">
-            <img src="/assets/ofertas/6/img1.jpg" />
-        </div>
-
-        <div class="col-md-8">
-            <div class="row">
-                <h4>Academia de tiro</h4>
-            </div>
-
-            <div class="row">
-                <h5>
-                    Sessão de tiro dinâmico com Instrutor, Estande, Alvo e
-                    Equipamentos.
-                </h5>
-            </div>
-
-            <div class="row">
-                <p>Anunciado por: <b>Academia de Tiro</b></p>
-            </div>
-
-            <div class="row">
-                <p>R$ 89,90</p>
-            </div>
-
-            <div class="row">
-                <button class="btn btn-outline-success">Ver oferta</button>
-            </div>
-        </div>
-    </div>
-
-    <hr />
 </div>

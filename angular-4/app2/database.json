@@ -5,7 +5,7 @@
 			"category": "restaurante",
 			"title": "Super Burger",
 			"description": "Rodízio de Mini-hambúrger com opção de entrada.",
-			"advertiser:": "Original Burger",
+			"advertiser": "Original Burger",
 			"price": 29.90,
 			"emphasis": true,
 			"images": [
@@ -20,7 +20,7 @@
 			"category": "restaurante",
 			"title": "Cozinha Mexicana",
 			"description": "Almoço ou Jantar com Rodízio Mexicano delicioso.",
-			"advertiser:": "Mexicana",
+			"advertiser": "Mexicana",
 			"price": 32.90,
 			"emphasis": true,
 			"images": [
@@ -35,7 +35,7 @@
 			"category": "restaurante",
 			"title": "Pizzas Grandes",
 			"description": "Pizza Grande, Mussarela, Marguerita ou outras!",
-			"advertiser:": "Nossa Pizza",
+			"advertiser": "Nossa Pizza",
 			"price": 21.90,
 			"emphasis": false,
 			"images": [
@@ -50,7 +50,7 @@
 			"category": "diversao",
 			"title": "Estância das águas",
 			"description": "Diversão garantida com piscinas, trilhas e muito mais.",
-			"advertiser:": "Estância das águas",
+			"advertiser": "Estância das águas",
 			"price": 31.90,
 			"emphasis": true,
 			"images": [
@@ -67,7 +67,7 @@
 			"category": "diversao",
 			"title": "Kart",
 			"description": "Bateria de Kart de 30 minutos.",
-			"advertiser:": "Speed Kart",
+			"advertiser": "Speed Kart",
 			"price": 54.90,
 			"emphasis": false,
 			"images": [
@@ -80,7 +80,7 @@
 			"category": "diversao",
 			"title": "Academia de tiro",
 			"description": "Sessão de tiro dinâmico com Instrutor, Estande, Alvo e Equipamentos.",
-			"advertiser:": "Academia de Tiro",
+			"advertiser": "Academia de Tiro",
 			"price": 89.90,
 			"emphasis": false,
 			"images": [

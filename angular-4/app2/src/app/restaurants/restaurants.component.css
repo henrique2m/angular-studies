@@ -8,3 +8,9 @@ img {
     padding-left: 25px;
     padding-right: 25px;
 }
+
+.row {
+    margin-bottom: 12px;
+    background: #eee;
+    padding: 10px;
+}

@@ -23,6 +23,15 @@ export class OffersService {
             .then((response: any) => response);
     }
 
+    public getOffersForCategory(category: string) {
+        const filter = `?category=${category}`;
+
+        return this.httpClient
+            .get(`${this.API_URI}/offers/${filter}`)
+            .toPromise()
+            .then((response: any) => response);
+    }
+
     public getOffersPromiseFake(): Promise<Offer[]> {
         return new Promise((resolve, reject) => {
             const status = true;
