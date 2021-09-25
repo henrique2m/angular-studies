@@ -32,6 +32,15 @@ export class OffersService {
             .then((response: any) => response);
     }
 
+    public getOffersFideById(id: number): Promise<Offer> {
+        const filter = `?id=${id}`;
+
+        return this.httpClient
+            .get(`${this.API_URI}/offers/${filter}`)
+            .toPromise()
+            .then((response: any) => response[0]);
+    }
+
     public getOffersPromiseFake(): Promise<Offer[]> {
         return new Promise((resolve, reject) => {
             const status = true;
