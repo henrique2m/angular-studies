@@ -18,19 +18,18 @@ export class OfferComponent implements OnInit {
     ) {}
 
     ngOnInit(): void {
-        this.recuperarParametroRotaComSnapshot();
+        this.retrieveParameterRouteWithSnapshot();
     }
 
-    recuperarParametroRotaComSnapshot() {
+    retrieveParameterRouteWithSnapshot() {
         const id = this.route.snapshot.params['id'];
 
         this.offersService.getOffersFideById(id).then((offer: Offer) => {
-            console.log(offer);
             this.offer = offer;
         });
     }
 
-    recuperarParametroRotaComSubscribe() {
+    retrieveParameterRouteWithSubscribe() {
         return this.route.params.subscribe((parametro: any) => {
             console.log(parametro.id);
         });

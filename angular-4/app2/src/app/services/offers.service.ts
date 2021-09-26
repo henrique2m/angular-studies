@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 
 @Injectable()
 export class OffersService {
-    API_URI: string = 'http://localhost:3001';
+    private API_URL: string = 'http://localhost:3001';
 
     constructor(private httpClient: HttpClient) {}
 
@@ -18,7 +18,7 @@ export class OffersService {
         const filter = '?emphasis=true';
 
         return this.httpClient
-            .get(`${this.API_URI}/offers/${filter}`)
+            .get(`${this.API_URL}/offers/${filter}`)
             .toPromise()
             .then((response: any) => response);
     }
@@ -27,7 +27,7 @@ export class OffersService {
         const filter = `?category=${category}`;
 
         return this.httpClient
-            .get(`${this.API_URI}/offers/${filter}`)
+            .get(`${this.API_URL}/offers/${filter}`)
             .toPromise()
             .then((response: any) => response);
     }
@@ -36,9 +36,27 @@ export class OffersService {
         const filter = `?id=${id}`;
 
         return this.httpClient
-            .get(`${this.API_URI}/offers/${filter}`)
+            .get(`${this.API_URL}/offers/${filter}`)
             .toPromise()
             .then((response: any) => response[0]);
+    }
+
+    public getHowToUseFideById(id: number): Promise<string> {
+        const filter = `?id=${id}`;
+
+        return this.httpClient
+            .get(`${this.API_URL}/how-to-use/${filter}`)
+            .toPromise()
+            .then((response: any) => response[0].description);
+    }
+
+    public getWhereIsFideById(id: number): Promise<string> {
+        const filter = `?id=${id}`;
+
+        return this.httpClient
+            .get(`${this.API_URL}/where-is/${filter}`)
+            .toPromise()
+            .then((response: any) => response[0].description);
     }
 
     public getOffersPromiseFake(): Promise<Offer[]> {

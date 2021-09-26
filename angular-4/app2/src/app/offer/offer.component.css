@@ -1,9 +1,13 @@
+.container {
+    padding-bottom: 300px;
+}
+
 h1 {
-    color: #555
+    color: #555;
 }
 
 .oferta {
-    margin-top: 25px
+    margin-top: 25px;
 }
 
 .oferta img {
