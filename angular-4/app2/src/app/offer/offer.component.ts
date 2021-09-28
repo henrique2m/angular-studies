@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+
 import { OffersService } from '../services/offers.service';
 import { Offer } from '../shared/offer.model';
+
+import { interval, Observable, Observer } from 'rxjs';
 
 @Component({
     selector: 'app-offer',
@@ -19,6 +22,8 @@ export class OfferComponent implements OnInit {
 
     ngOnInit(): void {
         this.retrieveParameterRouteWithSnapshot();
+        this.conceptionsObservable();
+        this.createObservable();
     }
 
     retrieveParameterRouteWithSnapshot() {
@@ -33,5 +38,24 @@ export class OfferComponent implements OnInit {
         return this.route.params.subscribe((parametro: any) => {
             console.log(parametro.id);
         });
+    }
+
+    conceptionsObservable() {
+        let time = interval(2000);
+
+        time.subscribe((interval: number) => {
+            console.log(interval);
+        });
+    }
+
+    createObservable() {
+        let numberObservable = new Observable((observer: Observer<number>) => {
+            observer.next(1);
+            observer.next(3);
+        });
+
+        numberObservable.subscribe((result: number) =>
+            console.log(result + 10)
+        );
     }
 }
