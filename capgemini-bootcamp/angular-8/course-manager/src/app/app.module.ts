@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { CourseInfoComponent } from './courses/components/course-info-component';
 import { CourseListComponent } from './courses/course-list-component';
 import { NavBarComponent } from './nav-bar/nav-bar-component';
 import { PageNotFound } from './pageNotFound/pageNotFound.component';
@@ -15,6 +16,7 @@ import { StarComponent } from './star/star.component';
   declarations: [
     AppComponent,
     CourseListComponent,
+    CourseInfoComponent,
     StarComponent,
     ReplacePipe,
     NavBarComponent,
@@ -26,14 +28,19 @@ import { StarComponent } from './star/star.component';
     ReactiveFormsModule,
     RouterModule.forRoot([
       {
+        path: 'courses',
+        component: CourseListComponent,
+      },
+      {
+        path: 'courses/info/:id',
+        component: CourseInfoComponent,
+      },
+      {
         path: '',
         redirectTo: 'courses',
         pathMatch: 'full',
       },
-      {
-        path: 'courses',
-        component: CourseListComponent,
-      },
+
       {
         path: '**',
         component: PageNotFound,
