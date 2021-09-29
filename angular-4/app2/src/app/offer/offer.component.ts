@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { OffersService } from '../services/offers.service';
 import { Offer } from '../shared/offer.model';
 
-import { interval, Observable, Observer } from 'rxjs';
+import { interval, Observable, Observer, Subscription } from 'rxjs';
 
 @Component({
     selector: 'app-offer',
@@ -12,7 +12,12 @@ import { interval, Observable, Observer } from 'rxjs';
     styleUrls: ['./offer.component.css'],
     providers: [OffersService]
 })
-export class OfferComponent implements OnInit {
+export class OfferComponent implements OnInit, OnDestroy {
+    private timeObservableSubscription!: Subscription;
+    private createObservableSubscription!: Subscription;
+    private handlingErrorObservableSubscription!: Subscription;
+    private endingObservableSubscription!: Subscription;
+
     offer!: Offer;
 
     constructor(
@@ -24,6 +29,8 @@ export class OfferComponent implements OnInit {
         this.retrieveParameterRouteWithSnapshot();
         this.conceptionsObservable();
         this.createObservable();
+        this.handlingErrorObservable();
+        this.endingObservable();
     }
 
     retrieveParameterRouteWithSnapshot() {
@@ -43,7 +50,7 @@ export class OfferComponent implements OnInit {
     conceptionsObservable() {
         let time = interval(2000);
 
-        time.subscribe((interval: number) => {
+        this.timeObservableSubscription = time.subscribe((interval: number) => {
             console.log(interval);
         });
     }
@@ -54,8 +61,41 @@ export class OfferComponent implements OnInit {
             observer.next(3);
         });
 
-        numberObservable.subscribe((result: number) =>
-            console.log(result + 10)
+        this.createObservableSubscription = numberObservable.subscribe(
+            (result: number) => console.log(result + 10)
         );
+    }
+
+    handlingErrorObservable() {
+        let numberObservable = new Observable((observer: Observer<number>) => {
+            observer.next(1);
+            observer.error('this is an Error!');
+            observer.next(2);
+        });
+
+        this.handlingErrorObservableSubscription = numberObservable.subscribe(
+            (result: number) => console.log(result + 10),
+            (erro: string) => console.log(erro)
+        );
+    }
+
+    endingObservable() {
+        let numberObservable = new Observable((observer: Observer<number>) => {
+            observer.next(1);
+            observer.complete();
+        });
+
+        this.endingObservableSubscription = numberObservable.subscribe(
+            (result: number) => console.log(result + 10),
+            (erro: string) => console.log(erro),
+            () => console.log('Finishing Observable.')
+        );
+    }
+
+    ngOnDestroy() {
+        this.timeObservableSubscription.unsubscribe();
+        this.createObservableSubscription.unsubscribe();
+        this.handlingErrorObservableSubscription.unsubscribe();
+        this.endingObservableSubscription.unsubscribe();
     }
 }
