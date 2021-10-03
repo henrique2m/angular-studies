@@ -2,6 +2,8 @@ import { Offer } from '../shared/offer.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
+import { Observable } from 'rxjs';
+
 @Injectable()
 export class OffersService {
     private API_URL: string = 'http://localhost:3001';
@@ -70,5 +72,11 @@ export class OffersService {
             }
             resolve(this.Offers);
         });
+    }
+
+    public offersSearch(search: string): Observable<Offer[]> {
+        return this.httpClient
+            .get(`${this.API_URL}/offers?description=${search}`)
+            .pipe((response: any) => response);
     }
 }
