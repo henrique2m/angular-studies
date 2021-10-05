@@ -11,6 +11,7 @@ import { NavBarComponent } from './nav-bar/nav-bar-component';
 import { PageNotFound } from './pageNotFound/pageNotFound.component';
 import { ReplacePipe } from './pipe/replace.pipe';
 import { StarComponent } from './star/star.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { StarComponent } from './star/star.component';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {
         path: 'courses',
