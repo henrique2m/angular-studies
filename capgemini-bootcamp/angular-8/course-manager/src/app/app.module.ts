@@ -1,51 +1,26 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-
 import { AppComponent } from './app.component';
-import { CourseInfoComponent } from './courses/components/course-info-component';
-import { CourseListComponent } from './courses/course-list-component';
-import { NavBarComponent } from './nav-bar/nav-bar-component';
-import { PageNotFound } from './pageNotFound/pageNotFound.component';
-import { ReplacePipe } from './pipe/replace.pipe';
-import { StarComponent } from './star/star.component';
+import { PageNotFound } from '../core/components/pageNotFound/pageNotFound.component';
+import { CourseModule } from './courses/course.module';
+import { CoreModule } from 'src/core/core.module';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CourseListComponent,
-    CourseInfoComponent,
-    StarComponent,
-    ReplacePipe,
-    NavBarComponent,
-    PageNotFound,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
-    FormsModule,
+    CourseModule,
     ReactiveFormsModule,
+    CoreModule,
     HttpClientModule,
     RouterModule.forRoot([
-      {
-        path: 'courses',
-        component: CourseListComponent,
-      },
-      {
-        path: 'courses/info/:id',
-        component: CourseInfoComponent,
-      },
       {
         path: '',
         redirectTo: 'courses',
         pathMatch: 'full',
-      },
-
-      {
-        path: '**',
-        component: PageNotFound,
       },
     ]),
   ],
