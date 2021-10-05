@@ -76,7 +76,7 @@ export class OffersService {
 
     public offersSearch(search: string): Observable<Offer[]> {
         return this.httpClient
-            .get(`${this.API_URL}/offers?description=${search}`)
+            .get(`${this.API_URL}/offers?description_like=${search}`)
             .pipe((response: any) => response);
     }
 }

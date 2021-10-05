@@ -19,8 +19,21 @@
                         class="form-control"
                         placeholder="Pesquise por oferta"
                         #referenceSearch
-                        (keyup)="searchToReferenceInput(referenceSearch.value)"
+                        (keyup)="
+                            searchOffersReactiveProgramming(
+                                referenceSearch.value
+                            )
+                        "
                     />
+
+                    <ul class="list-group" style="position: absolute">
+                        <li
+                            *ngFor="let offer of handleOffers"
+                            class="list-group-item"
+                        >
+                            {{ offer.title }}
+                        </li>
+                    </ul>
                 </div>
                 <div class="col-md-2">
                     <a href="#"><img src="/assets/carrinho.png" /></a>
