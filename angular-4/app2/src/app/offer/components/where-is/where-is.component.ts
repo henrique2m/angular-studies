@@ -11,23 +11,29 @@ export class WhereIsComponent implements OnInit {
     whereIs!: string;
 
     constructor(
-        private route: ActivatedRoute,
+        private router: ActivatedRoute,
         private offersService: OffersService
     ) {}
 
     ngOnInit(): void {
-        this.handleWhereIs();
+        this.handleWhereIsWithParmas();
     }
 
-    loadingWhereIs(id: number) {
+    private _loadingWhereIs(id: number) {
         this.offersService.getWhereIsFideById(id).then((response: string) => {
             this.whereIs = response;
         });
     }
 
-    handleWhereIs() {
-        this.route.parent?.params.subscribe((params) => {
-            this.loadingWhereIs(params.id);
+    handleWhereIsWithParmas() {
+        this.router.parent?.params.subscribe((params) => {
+            this._loadingWhereIs(params.id);
         });
+    }
+
+    handleWhereIsWithSnapshot() {
+        const id = this.router.parent?.snapshot.params['id'];
+
+        this._loadingWhereIs(id);
     }
 }

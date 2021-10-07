@@ -26,12 +26,20 @@
                         "
                     />
 
-                    <ul class="list-group" style="position: absolute">
+                    <ul
+                        class="list-group"
+                        style="position: absolute; z-index: 999"
+                    >
                         <li
-                            *ngFor="let offer of handleOffers"
+                            *ngFor="let offer of offers | async"
                             class="list-group-item"
                         >
-                            {{ offer.title }}
+                            <a
+                                [routerLink]="['/offer', offer.id]"
+                                (click)="clearSearch()"
+                            >
+                                {{ offer.title | reductionDescription: 12 }}
+                            </a>
                         </li>
                     </ul>
                 </div>

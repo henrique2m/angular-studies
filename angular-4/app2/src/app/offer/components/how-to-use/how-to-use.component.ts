@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { OffersService } from 'src/app/services/offers.service';
 
 @Component({
@@ -16,17 +16,23 @@ export class HowToUseComponent implements OnInit {
     ) {}
 
     ngOnInit() {
-        this.handleHowToUse();
+        this.handleHowToUseWithParams();
     }
 
-    loadingHowToUse(id: number) {
+    private _loadingHowToUse(id: number) {
         this.offersService.getHowToUseFideById(id).then((response: string) => {
             this.howToUse = response;
         });
     }
 
-    handleHowToUse() {
+    handleHowToUseWithSnapshot() {
         const id = this.router.parent?.snapshot.params['id'];
-        this.loadingHowToUse(id);
+        this._loadingHowToUse(id);
+    }
+
+    handleHowToUseWithParams() {
+        this.router.parent?.params.subscribe((params: Params) => {
+            this._loadingHowToUse(params.id);
+        });
     }
 }

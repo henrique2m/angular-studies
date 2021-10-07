@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 
 import { OffersService } from '../services/offers.service';
 import { Offer } from '../shared/offer.model';
@@ -26,19 +26,29 @@ export class OfferComponent implements OnInit, OnDestroy {
     ) {}
 
     ngOnInit(): void {
-        this.retrieveParameterRouteWithSnapshot();
+        this.retrieveParameterRouteWithParams();
         this.conceptionsObservable();
         this.createObservable();
         this.handlingErrorObservable();
         this.endingObservable();
     }
 
-    retrieveParameterRouteWithSnapshot() {
-        const id = this.route.snapshot.params['id'];
-
+    private _getOffersFideById(id: number) {
         this.offersService.getOffersFideById(id).then((offer: Offer) => {
             this.offer = offer;
         });
+    }
+
+    retrieveParameterRouteWithParams() {
+        this.route.params.subscribe((params: Params) => {
+            this._getOffersFideById(params.id);
+        });
+    }
+
+    retrieveParameterRouteWithSnapshot() {
+        const id = this.route.snapshot.params['id'];
+
+        this._getOffersFideById(id);
     }
 
     retrieveParameterRouteWithSubscribe() {

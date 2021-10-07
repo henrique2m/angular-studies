@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,6 +16,13 @@ import { OfferComponent } from './offer/offer.component';
 import { NavComponent } from './offer/components/nav/nav.component';
 import { HowToUseComponent } from './offer/components/how-to-use/how-to-use.component';
 import { WhereIsComponent } from './offer/components/where-is/where-is.component';
+import { ReductionDescription } from './util/pipes/reduction-description.pipe';
+
+import { registerLocaleData } from '@angular/common';
+
+import localePt from '@angular/common/locales/pt';
+
+registerLocaleData(localePt);
 
 @NgModule({
     declarations: [
@@ -28,7 +35,8 @@ import { WhereIsComponent } from './offer/components/where-is/where-is.component
         OfferComponent,
         NavComponent,
         HowToUseComponent,
-        WhereIsComponent
+        WhereIsComponent,
+        ReductionDescription
     ],
     imports: [
         BrowserModule,
@@ -36,7 +44,7 @@ import { WhereIsComponent } from './offer/components/where-is/where-is.component
         HttpClientModule,
         RouterModule.forRoot(ROUTES)
     ],
-    providers: [],
+    providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

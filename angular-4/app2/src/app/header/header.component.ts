@@ -18,7 +18,6 @@ import {
 })
 export class HeaderComponent implements OnInit {
     public offers!: Observable<Offer[]>;
-    public handleOffers!: Offer[];
     private subjectSearchOffers: Subject<string> = new Subject<string>();
 
     constructor(private offersService: OffersService) {}
@@ -60,9 +59,9 @@ export class HeaderComponent implements OnInit {
                 return of<Offer[]>([]);
             })
         );
+    }
 
-        this.offers.subscribe(
-            (offers: Offer[]) => (this.handleOffers = offers)
-        );
+    clearSearch() {
+        this.subjectSearchOffers.next('');
     }
 }
