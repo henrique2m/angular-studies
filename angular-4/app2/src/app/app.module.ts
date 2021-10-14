@@ -21,6 +21,7 @@ import { ReductionDescription } from './util/pipes/reduction-description.pipe';
 import { registerLocaleData } from '@angular/common';
 
 import localePt from '@angular/common/locales/pt';
+import { PurchaseOrderComponent } from './purchase-order/purchase-order.component';
 
 registerLocaleData(localePt);
 
@@ -36,7 +37,8 @@ registerLocaleData(localePt);
         NavComponent,
         HowToUseComponent,
         WhereIsComponent,
-        ReductionDescription
+        ReductionDescription,
+        PurchaseOrderComponent
     ],
     imports: [
         BrowserModule,
