@@ -1,144 +1,211 @@
 {
-	"offers": [
-		{
-			"id": 1,
-			"category": "restaurante",
-			"title": "Super Burger",
-			"description": "Rodízio de Mini-hambúrger com opção de entrada.",
-			"advertiser": "Original Burger",
-			"price": 29.90,
-			"emphasis": true,
-			"images": [
-				{"url": "/assets/ofertas/1/img1.jpg"},
-				{"url": "/assets/ofertas/1/img2.jpg"},
-				{"url": "/assets/ofertas/1/img3.jpg"},
-				{"url": "/assets/ofertas/1/img4.jpg"}
-			]
-		},
-		{
-			"id": 2,
-			"category": "restaurante",
-			"title": "Cozinha Mexicana",
-			"description": "Almoço ou Jantar com Rodízio Mexicano delicioso.",
-			"advertiser": "Mexicana",
-			"price": 32.90,
-			"emphasis": true,
-			"images": [
-				{"url": "/assets/ofertas/2/img1.jpg"},
-				{"url": "/assets/ofertas/2/img2.jpg"},
-				{"url": "/assets/ofertas/2/img3.jpg"},
-				{"url": "/assets/ofertas/2/img4.jpg"}
-			]
-		},
-		{
-			"id": 3,
-			"category": "restaurante",
-			"title": "Pizzas Grandes",
-			"description": "Pizza Grande, Mussarela, Marguerita ou outras!",
-			"advertiser": "Nossa Pizza",
-			"price": 21.90,
-			"emphasis": false,
-			"images": [
-				{"url": "/assets/ofertas/3/img1.jpg"},
-				{"url": "/assets/ofertas/3/img2.jpg"},
-				{"url": "/assets/ofertas/3/img3.jpg"},
-				{"url": "/assets/ofertas/3/img4.jpg"}
-			]
-		},
-		{
-			"id": 4,
-			"category": "diversao",
-			"title": "Estância das águas",
-			"description": "Diversão garantida com piscinas, trilhas e muito mais.",
-			"advertiser": "Estância das águas",
-			"price": 31.90,
-			"emphasis": true,
-			"images": [
-				{"url": "/assets/ofertas/4/img1.jpg"},
-				{"url": "/assets/ofertas/4/img2.jpg"},
-				{"url": "/assets/ofertas/4/img3.jpg"},
-				{"url": "/assets/ofertas/4/img4.jpg"},
-				{"url": "/assets/ofertas/4/img5.jpg"},
-				{"url": "/assets/ofertas/4/img6.jpg"}
-			]
-		},
-		{
-			"id": 5,
-			"category": "diversao",
-			"title": "Kart",
-			"description": "Bateria de Kart de 30 minutos.",
-			"advertiser": "Speed Kart",
-			"price": 54.90,
-			"emphasis": false,
-			"images": [
-				{"url": "/assets/ofertas/5/img1.jpg"},
-				{"url": "/assets/ofertas/5/img2.jpg"}
-			]
-		},
-		{
-			"id": 6,
-			"category": "diversao",
-			"title": "Academia de tiro",
-			"description": "Sessão de tiro dinâmico com Instrutor, Estande, Alvo e Equipamentos.",
-			"advertiser": "Academia de Tiro",
-			"price": 89.90,
-			"emphasis": false,
-			"images": [
-				{"url": "/assets/ofertas/6/img1.jpg"},
-				{"url": "/assets/ofertas/6/img2.jpg"}
-			]
-		}
-	],
+  "offers": [
+    {
+      "id": 1,
+      "category": "restaurante",
+      "title": "Super Burger",
+      "description": "Rodízio de Mini-hambúrger com opção de entrada.",
+      "advertiser": "Original Burger",
+      "price": 29.9,
+      "emphasis": true,
+      "images": [
+        {
+          "url": "/assets/ofertas/1/img1.jpg"
+        },
+        {
+          "url": "/assets/ofertas/1/img2.jpg"
+        },
+        {
+          "url": "/assets/ofertas/1/img3.jpg"
+        },
+        {
+          "url": "/assets/ofertas/1/img4.jpg"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "category": "restaurante",
+      "title": "Cozinha Mexicana",
+      "description": "Almoço ou Jantar com Rodízio Mexicano delicioso.",
+      "advertiser": "Mexicana",
+      "price": 32.9,
+      "emphasis": true,
+      "images": [
+        {
+          "url": "/assets/ofertas/2/img1.jpg"
+        },
+        {
+          "url": "/assets/ofertas/2/img2.jpg"
+        },
+        {
+          "url": "/assets/ofertas/2/img3.jpg"
+        },
+        {
+          "url": "/assets/ofertas/2/img4.jpg"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "category": "restaurante",
+      "title": "Pizzas Grandes",
+      "description": "Pizza Grande, Mussarela, Marguerita ou outras!",
+      "advertiser": "Nossa Pizza",
+      "price": 21.9,
+      "emphasis": false,
+      "images": [
+        {
+          "url": "/assets/ofertas/3/img1.jpg"
+        },
+        {
+          "url": "/assets/ofertas/3/img2.jpg"
+        },
+        {
+          "url": "/assets/ofertas/3/img3.jpg"
+        },
+        {
+          "url": "/assets/ofertas/3/img4.jpg"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "category": "diversao",
+      "title": "Estância das águas",
+      "description": "Diversão garantida com piscinas, trilhas e muito mais.",
+      "advertiser": "Estância das águas",
+      "price": 31.9,
+      "emphasis": true,
+      "images": [
+        {
+          "url": "/assets/ofertas/4/img1.jpg"
+        },
+        {
+          "url": "/assets/ofertas/4/img2.jpg"
+        },
+        {
+          "url": "/assets/ofertas/4/img3.jpg"
+        },
+        {
+          "url": "/assets/ofertas/4/img4.jpg"
+        },
+        {
+          "url": "/assets/ofertas/4/img5.jpg"
+        },
+        {
+          "url": "/assets/ofertas/4/img6.jpg"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "category": "diversao",
+      "title": "Kart",
+      "description": "Bateria de Kart de 30 minutos.",
+      "advertiser": "Speed Kart",
+      "price": 54.9,
+      "emphasis": false,
+      "images": [
+        {
+          "url": "/assets/ofertas/5/img1.jpg"
+        },
+        {
+          "url": "/assets/ofertas/5/img2.jpg"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "category": "diversao",
+      "title": "Academia de tiro",
+      "description": "Sessão de tiro dinâmico com Instrutor, Estande, Alvo e Equipamentos.",
+      "advertiser": "Academia de Tiro",
+      "price": 89.9,
+      "emphasis": false,
+      "images": [
+        {
+          "url": "/assets/ofertas/6/img1.jpg"
+        },
+        {
+          "url": "/assets/ofertas/6/img2.jpg"
+        }
+      ]
+    }
+  ],
   "how-to-use": [
-		{
-			"id": 1,
-			"description": "Não é necessário agendar"
-		},
-		{
-			"id": 2,
-			"description": "Válido de segunda a quinta das 12h as 23h"
-		},
-		{
-			"id": 3,
-			"description": "Não é necessário agendar"
-		},
-		{
-			"id": 4,
-			"description": "Necessário agendar com no mínimo 48 horas de antecedência"
-		},
-		{
-			"id": 5,
-			"description": "Válido de segunda a sábado das 12h as 23h. Necessário agendamento prévio"
-		},
-		{
-			"id": 6,
-			"description": "Não é necessário agendar. Sujeito à fila."
-		}
-	],
+    {
+      "id": 1,
+      "description": "Não é necessário agendar"
+    },
+    {
+      "id": 2,
+      "description": "Válido de segunda a quinta das 12h as 23h"
+    },
+    {
+      "id": 3,
+      "description": "Não é necessário agendar"
+    },
+    {
+      "id": 4,
+      "description": "Necessário agendar com no mínimo 48 horas de antecedência"
+    },
+    {
+      "id": 5,
+      "description": "Válido de segunda a sábado das 12h as 23h. Necessário agendamento prévio"
+    },
+    {
+      "id": 6,
+      "description": "Não é necessário agendar. Sujeito à fila."
+    }
+  ],
   "where-is": [
-		{
-			"id": 1,
-			"description": "Avenida João da Silva, 255, São Paulo - SP"
-		},
-		{
-			"id": 2,
-			"description": "Rua Francisco Mendes, 1000, Rio de Janeiro - SP "
-		},
-		{
-			"id": 3,
-			"description": "Avenida Lúcio Rodrigues Alves, 33, Fortaleza - CE"
-		},
-		{
-			"id": 4,
-			"description": "Avenida José de Oliveira, 550, Campo Grande - MS"
-		},
-		{
-			"id": 5,
-			"description": "Avenida Júlia Abrão, 77, São Paulo - SP"
-		},
-		{
-			"id": 6,
-			"description": "Estrada Maria das Graças, 12, Salvador - BA "
-		}
-	]
+    {
+      "id": 1,
+      "description": "Avenida João da Silva, 255, São Paulo - SP"
+    },
+    {
+      "id": 2,
+      "description": "Rua Francisco Mendes, 1000, Rio de Janeiro - SP "
+    },
+    {
+      "id": 3,
+      "description": "Avenida Lúcio Rodrigues Alves, 33, Fortaleza - CE"
+    },
+    {
+      "id": 4,
+      "description": "Avenida José de Oliveira, 550, Campo Grande - MS"
+    },
+    {
+      "id": 5,
+      "description": "Avenida Júlia Abrão, 77, São Paulo - SP"
+    },
+    {
+      "id": 6,
+      "description": "Estrada Maria das Graças, 12, Salvador - BA "
+    }
+  ],
+  "demand": [
+    {
+      "address": "Rua Paracambi",
+      "number": "2350",
+      "complement": "Bueno",
+      "payment": "dinheiro",
+      "id": 1
+    },
+    {
+      "address": "Rua Paracambi",
+      "number": "2350",
+      "complement": "Bueno",
+      "payment": "dinheiro",
+      "id": 2
+    },
+    {
+      "address": "Rua Paracambi",
+      "number": "2350",
+      "complement": "Bueno",
+      "payment": "dinheiro",
+      "id": 3
+    }
+  ]
 }

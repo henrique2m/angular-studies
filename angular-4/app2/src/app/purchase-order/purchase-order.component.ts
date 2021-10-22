@@ -1,15 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { Demand } from '../shared/purchaseOrder.model';
+import { PurchaseOrderService } from '../services/purchase-order.service';
 
 @Component({
     selector: 'app-purchase-order',
     templateUrl: './purchase-order.component.html',
-    styleUrls: ['./purchase-order.component.css']
+    styleUrls: ['./purchase-order.component.css'],
+    providers: [PurchaseOrderService]
 })
 export class PurchaseOrderComponent implements OnInit {
     address!: string;
     number!: string;
     complement!: string;
     payment: string = 'debito';
+    idProduct!: number | undefined;
 
     isValidAddress!: boolean;
     isValidNumber!: boolean;
@@ -23,7 +27,7 @@ export class PurchaseOrderComponent implements OnInit {
 
     isValidForm: string = 'disabled';
 
-    constructor() {}
+    constructor(private purchaseOrderService: PurchaseOrderService) {}
 
     ngOnInit(): void {
         console.log('Not empty');
@@ -87,5 +91,25 @@ export class PurchaseOrderComponent implements OnInit {
         }
 
         this.isValidForm = 'disabled';
+    }
+
+    handleCheckout() {
+        const { address, number, complement, payment } = this;
+
+        const demand: Demand = {
+            address,
+            number,
+            complement,
+            payment
+        };
+
+        this.purchaseOrderService.checkout(demand).subscribe({
+            next: (demand: Demand) => {
+                this.idProduct = demand.id;
+            },
+            error: (e) => {
+                console.log(e);
+            }
+        });
     }
 }

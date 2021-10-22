@@ -22,6 +22,7 @@ import { registerLocaleData } from '@angular/common';
 
 import localePt from '@angular/common/locales/pt';
 import { PurchaseOrderComponent } from './purchase-order/purchase-order.component';
+import { PurchaseOrderSuccessComponent } from './purchase-order-success/purchase-order-success.component';
 
 registerLocaleData(localePt);
 
@@ -38,7 +39,8 @@ registerLocaleData(localePt);
         HowToUseComponent,
         WhereIsComponent,
         ReductionDescription,
-        PurchaseOrderComponent
+        PurchaseOrderComponent,
+        PurchaseOrderSuccessComponent
     ],
     imports: [
         BrowserModule,
