@@ -1,4 +1,4 @@
-import { LOCALE_ID, NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,8 +21,11 @@ import { ReductionDescription } from './util/pipes/reduction-description.pipe';
 import { registerLocaleData } from '@angular/common';
 
 import localePt from '@angular/common/locales/pt';
-import { PurchaseOrderComponent } from './purchase-order/purchase-order.component';
+
+import { FormsModule } from '@angular/forms';
 import { PurchaseOrderSuccessComponent } from './purchase-order-success/purchase-order-success.component';
+import { PurchaseOrderBindingComponent } from './purchase-order/form-with-event-binding/purchase-order-binding.component';
+import { PurchaseOrderFormModuleComponent } from './purchase-order/purchase-order-form-module.component';
 
 registerLocaleData(localePt);
 
@@ -39,16 +42,19 @@ registerLocaleData(localePt);
         HowToUseComponent,
         WhereIsComponent,
         ReductionDescription,
-        PurchaseOrderComponent,
+        PurchaseOrderBindingComponent,
+        PurchaseOrderFormModuleComponent,
         PurchaseOrderSuccessComponent
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
+        FormsModule,
         RouterModule.forRoot(ROUTES)
     ],
     providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }],
-    bootstrap: [AppComponent]
+    bootstrap: [AppComponent],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {}

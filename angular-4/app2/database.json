@@ -206,6 +206,26 @@
       "complement": "Bueno",
       "payment": "dinheiro",
       "id": 3
+    },
+    {
+      "address": "teste",
+      "number": "2349",
+      "complement": "rresre",
+      "payment": "debito",
+      "id": 4
+    },
+    {
+      "address": "Rua Paracambi ",
+      "number": "2350",
+      "complement": "Bueno",
+      "id": 5
+    },
+    {
+      "address": "teste",
+      "number": "2332",
+      "complement": "23312",
+      "selectPayment": "dinheiro",
+      "id": 6
     }
   ]
 }

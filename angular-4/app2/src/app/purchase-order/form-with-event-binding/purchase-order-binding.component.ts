@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Demand } from '../shared/purchaseOrder.model';
-import { PurchaseOrderService } from '../services/purchase-order.service';
+import { PurchaseOrderService } from 'src/app/services/purchase-order.service';
+import { Demand } from 'src/app/shared/purchaseOrder.model';
 
 @Component({
-    selector: 'app-purchase-order',
-    templateUrl: './purchase-order.component.html',
-    styleUrls: ['./purchase-order.component.css'],
+    selector: 'app-purchase-order-binding',
+    templateUrl: './purchase-order-binding.component.html',
+    styleUrls: ['../purchase-order.component.css'],
     providers: [PurchaseOrderService]
 })
-export class PurchaseOrderComponent implements OnInit {
+export class PurchaseOrderBindingComponent implements OnInit {
     address!: string;
     number!: string;
     complement!: string;
