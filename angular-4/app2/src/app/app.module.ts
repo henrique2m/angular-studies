@@ -22,10 +22,12 @@ import { registerLocaleData } from '@angular/common';
 
 import localePt from '@angular/common/locales/pt';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { PurchaseOrderSuccessComponent } from './purchase-order-success/purchase-order-success.component';
 import { PurchaseOrderBindingComponent } from './purchase-order/form-with-event-binding/purchase-order-binding.component';
-import { PurchaseOrderFormModuleComponent } from './purchase-order/purchase-order-form-module.component';
+import { PurchaseOrderFormReactiveModuleComponent } from './purchase-order/purchase-order-form-reactive.component';
+import { PurchaseOrderFormModuleComponent } from './purchase-order/form-com-ngmodel/purchase-order-form-module.component';
 
 registerLocaleData(localePt);
 
@@ -44,6 +46,7 @@ registerLocaleData(localePt);
         ReductionDescription,
         PurchaseOrderBindingComponent,
         PurchaseOrderFormModuleComponent,
+        PurchaseOrderFormReactiveModuleComponent,
         PurchaseOrderSuccessComponent
     ],
     imports: [
@@ -51,6 +54,7 @@ registerLocaleData(localePt);
         AppRoutingModule,
         HttpClientModule,
         FormsModule,
+        ReactiveFormsModule,
         RouterModule.forRoot(ROUTES)
     ],
     providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }],
