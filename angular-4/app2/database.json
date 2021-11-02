@@ -226,6 +226,20 @@
       "complement": "23312",
       "selectPayment": "dinheiro",
       "id": 6
+    },
+    {
+      "address": "Rua Paracambi",
+      "number": "2350",
+      "complement": "Bueno",
+      "payment": "dinheiro",
+      "id": 7
+    },
+    {
+      "address": "teste",
+      "number": "2345",
+      "complement": "teste",
+      "payment": "debito",
+      "id": 8
     }
   ]
 }

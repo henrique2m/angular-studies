@@ -29,17 +29,12 @@ export class PurchaseOrderFormReactiveModuleComponent implements OnInit {
 
     constructor(private purchaseOrderService: PurchaseOrderService) {}
 
-    @ViewChild('productForm') productForm!: NgForm;
-
     ngOnInit(): void {
         console.log('Not empty');
     }
 
     handleCheckout() {
-        console.log(this.formProduct);
-
-        return;
-        const demand: Demand = this.productForm.value;
+        const demand: Demand = this.formProduct.value;
 
         this.purchaseOrderService.checkout(demand).subscribe({
             next: (demand: Demand) => {

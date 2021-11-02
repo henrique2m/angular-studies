@@ -99,9 +99,24 @@
                         formControlName="address"
                     />
                     <div>
-                        <small>Ok</small>
+                        <small
+                            *ngIf="
+                                formProduct.controls.address.valid &&
+                                formProduct.controls.address.touched
+                            "
+                            class="form-text text-success"
+                            >Ok</small
+                        >
 
-                        <small> Endereço inválido </small>
+                        <small
+                            *ngIf="
+                                !formProduct.controls.address.valid &&
+                                formProduct.controls.address.touched
+                            "
+                            class="form-text text-danger"
+                        >
+                            Endereço inválido
+                        </small>
                     </div>
                 </div>
 
@@ -113,9 +128,23 @@
                         formControlName="number"
                     />
                     <div>
-                        <small>Ok</small>
-
-                        <small> Informe um número </small>
+                        <small
+                            *ngIf="
+                                formProduct.controls.number.valid &&
+                                formProduct.controls.number.touched
+                            "
+                            class="form-text text-success"
+                            >Ok</small
+                        >
+                        <small
+                            *ngIf="
+                                !formProduct.controls.number.valid &&
+                                formProduct.controls.number.touched
+                            "
+                            class="form-text text-danger"
+                        >
+                            Informe um número
+                        </small>
                     </div>
                 </div>
 
@@ -140,14 +169,24 @@
                         <option value="debito">Débito</option>
                     </select>
 
-                    <small class="form-text text-danger">
+                    <small
+                        *ngIf="
+                            !formProduct.controls.payment.valid &&
+                            formProduct.controls.payment.touched
+                        "
+                        class="form-text text-danger"
+                    >
                         Selecione uma forma de pagamento
                     </small>
                 </div>
             </div>
 
             <hr />
-            <button type="submit" class="btn btn-primary btn-lg">
+            <button
+                type="submit"
+                class="btn btn-primary btn-lg"
+                [disabled]="!formProduct.valid"
+            >
                 Confirmar compra
             </button>
         </form>
