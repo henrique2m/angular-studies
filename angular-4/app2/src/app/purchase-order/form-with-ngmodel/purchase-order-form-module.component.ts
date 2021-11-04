@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { NgForm } from '@angular/forms';
+import { CartService } from 'src/app/services/cart.service';
 import { PurchaseOrderService } from 'src/app/services/purchase-order.service';
 import { Demand } from 'src/app/shared/purchaseOrder.model';
 

@@ -27,7 +27,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PurchaseOrderSuccessComponent } from './purchase-order-success/purchase-order-success.component';
 import { PurchaseOrderBindingComponent } from './purchase-order/form-with-event-binding/purchase-order-binding.component';
 import { PurchaseOrderFormReactiveModuleComponent } from './purchase-order/purchase-order-form-reactive.component';
-import { PurchaseOrderFormModuleComponent } from './purchase-order/form-com-ngmodel/purchase-order-form-module.component';
+import { PurchaseOrderFormModuleComponent } from './purchase-order/form-with-ngmodel/purchase-order-form-module.component';
+import { CartService } from './services/cart.service';
 
 registerLocaleData(localePt);
 
@@ -57,7 +58,7 @@ registerLocaleData(localePt);
         ReactiveFormsModule,
         RouterModule.forRoot(ROUTES)
     ],
-    providers: [{ provide: LOCALE_ID, useValue: 'pt-BR' }],
+    providers: [CartService, { provide: LOCALE_ID, useValue: 'pt-BR' }],
     bootstrap: [AppComponent],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

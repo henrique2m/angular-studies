@@ -5,7 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { HowToUseComponent } from './offer/components/how-to-use/how-to-use.component';
 import { WhereIsComponent } from './offer/components/where-is/where-is.component';
 import { OfferComponent } from './offer/offer.component';
-import { PurchaseOrderFormModuleComponent } from './purchase-order/form-com-ngmodel/purchase-order-form-module.component';
+import { PurchaseOrderFormModuleComponent } from './purchase-order/form-with-ngmodel/purchase-order-form-module.component';
 import { PurchaseOrderBindingComponent } from './purchase-order/form-with-event-binding/purchase-order-binding.component';
 import { PurchaseOrderFormReactiveModuleComponent } from './purchase-order/purchase-order-form-reactive.component';
 import { RestaurantsComponent } from './restaurants/restaurants.component';

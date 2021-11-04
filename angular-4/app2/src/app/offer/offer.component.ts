@@ -5,6 +5,7 @@ import { OffersService } from '../services/offers.service';
 import { Offer } from '../shared/offer.model';
 
 import { interval, Observable, Observer, Subscription } from 'rxjs';
+import { CartService } from '../services/cart.service';
 
 @Component({
     selector: 'app-offer',
@@ -22,7 +23,8 @@ export class OfferComponent implements OnInit, OnDestroy {
 
     constructor(
         private route: ActivatedRoute,
-        private offersService: OffersService
+        private offersService: OffersService,
+        private cartService: CartService
     ) {}
 
     ngOnInit(): void {
@@ -100,6 +102,10 @@ export class OfferComponent implements OnInit, OnDestroy {
             (erro: string) => console.log(erro),
             () => console.log('Finishing Observable.')
         );
+    }
+
+    addItemCart() {
+        this.cartService.addItemCart(this.offer);
     }
 
     ngOnDestroy() {

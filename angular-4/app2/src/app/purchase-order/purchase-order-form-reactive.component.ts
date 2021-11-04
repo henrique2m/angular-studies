@@ -1,7 +1,10 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Demand } from '../shared/purchaseOrder.model';
 import { PurchaseOrderService } from '../services/purchase-order.service';
-import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { CartService } from '../services/cart.service';
+
+import { ItemCart } from '../shared/cart.model';
 
 @Component({
     selector: 'app-purchase-order-reactive-module',
@@ -11,6 +14,7 @@ import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 })
 export class PurchaseOrderFormReactiveModuleComponent implements OnInit {
     idProduct!: number | undefined;
+    itemsCart: ItemCart[] = [];
 
     formProduct: FormGroup = new FormGroup({
         address: new FormControl(null, [
@@ -27,10 +31,17 @@ export class PurchaseOrderFormReactiveModuleComponent implements OnInit {
         payment: new FormControl(null, [Validators.required])
     });
 
-    constructor(private purchaseOrderService: PurchaseOrderService) {}
+    constructor(
+        private purchaseOrderService: PurchaseOrderService,
+        private cartService: CartService
+    ) {}
 
     ngOnInit(): void {
-        console.log('Not empty');
+        this.handleItensCart();
+    }
+
+    handleItensCart() {
+        this.itemsCart = this.cartService.getItemsCart();
     }
 
     handleCheckout() {
