@@ -30,4 +30,11 @@ export class CartService {
     getItemsCart(): ItemCart[] {
         return this.itemsCart;
     }
+
+    sumPriceTotal(): number {
+        return this.itemsCart.reduce(
+            (sum, item) => sum + item.price * item.amount,
+            0
+        );
+    }
 }

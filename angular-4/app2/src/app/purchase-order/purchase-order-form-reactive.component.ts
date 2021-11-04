@@ -15,6 +15,7 @@ import { ItemCart } from '../shared/cart.model';
 export class PurchaseOrderFormReactiveModuleComponent implements OnInit {
     idProduct!: number | undefined;
     itemsCart: ItemCart[] = [];
+    sumPriceTotal: number = 0;
 
     formProduct: FormGroup = new FormGroup({
         address: new FormControl(null, [
@@ -42,6 +43,7 @@ export class PurchaseOrderFormReactiveModuleComponent implements OnInit {
 
     handleItensCart() {
         this.itemsCart = this.cartService.getItemsCart();
+        this.sumPriceTotal = this.cartService.sumPriceTotal();
     }
 
     handleCheckout() {

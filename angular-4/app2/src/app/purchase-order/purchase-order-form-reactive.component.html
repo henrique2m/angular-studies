@@ -49,7 +49,10 @@
 
             <div class="form-row">
                 <div class="form-group col d-flex justify-content-end">
-                    <h4>Total do pedido:</h4>
+                    <h4>
+                        Total do pedido:
+                        {{ sumPriceTotal | currency: 'BRL':true }}
+                    </h4>
                 </div>
             </div>
             <br />
