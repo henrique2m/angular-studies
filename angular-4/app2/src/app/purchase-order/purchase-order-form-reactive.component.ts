@@ -5,6 +5,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CartService } from '../services/cart.service';
 
 import { ItemCart } from '../shared/cart.model';
+import { Offer } from '../shared/offer.model';
 
 @Component({
     selector: 'app-purchase-order-reactive-module',
@@ -57,5 +58,9 @@ export class PurchaseOrderFormReactiveModuleComponent implements OnInit {
                 console.log(e);
             }
         });
+    }
+
+    handleIncreasedItemAmount(itemCart: ItemCart) {
+        this.cartService.increasedItemAmount(itemCart);
     }
 }

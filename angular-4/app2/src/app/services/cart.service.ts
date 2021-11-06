@@ -37,4 +37,14 @@ export class CartService {
             0
         );
     }
+
+    increasedItemAmount(itemCart: ItemCart) {
+        const existItem = this.itemsCart.find(
+            (itemCart) => itemCart.id === itemCart.id
+        );
+
+        if (!existItem) return;
+
+        existItem.amount += 1;
+    }
 }

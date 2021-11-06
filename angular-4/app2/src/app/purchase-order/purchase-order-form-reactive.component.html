@@ -33,7 +33,11 @@
                                 -
                             </button>
                             {{ itemCart.amount }}
-                            <button type="button" class="btn btn-link">
+                            <button
+                                (click)="handleIncreasedItemAmount(itemCart)"
+                                type="button"
+                                class="btn btn-link"
+                            >
                                 +
                             </button>
                         </div>
