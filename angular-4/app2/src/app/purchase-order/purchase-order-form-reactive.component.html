@@ -1,6 +1,7 @@
 <div class="container">
     <div *ngIf="idProduct === undefined" class="ordem-compra">
         <form
+            *ngIf="sumPriceTotal; else emptyCard"
             [formGroup]="formProduct"
             novalidate
             (ngSubmit)="handleCheckout()"
@@ -8,15 +9,7 @@
             <h5>Sua Compra</h5>
             <hr />
 
-            <div
-                class="form-row"
-                style="
-                    background: #fafafa;
-                    padding: 20px;
-                    border-bottom: solid 1px #f0f0f0;
-                "
-                *ngFor="let itemCart of itemsCart"
-            >
+            <div class="form-row container" *ngFor="let itemCart of itemsCart">
                 <div class="form-group col-sm-1">
                     <img [src]="itemCart.image?.url" class="img-fluid" />
                 </div>
@@ -29,7 +22,11 @@
                 <div>
                     <div class="row">
                         <div class="col">
-                            <button type="button" class="btn btn-link">
+                            <button
+                                (click)="handleDecreasedItemAmount(itemCart)"
+                                type="button"
+                                class="btn btn-link"
+                            >
                                 -
                             </button>
                             {{ itemCart.amount }}
@@ -165,6 +162,10 @@
             </button>
         </form>
     </div>
+
+    <ng-template #emptyCard>
+        <div class="form-row container">Seu carrinho está vazio! ;(</div>
+    </ng-template>
 
     <div *ngIf="idProduct !== undefined">
         <app-purchase-order-success

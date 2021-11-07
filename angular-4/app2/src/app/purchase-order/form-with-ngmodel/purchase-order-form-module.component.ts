@@ -24,6 +24,7 @@ export class PurchaseOrderFormModuleComponent implements OnInit {
 
     handleCheckout() {
         const demand: Demand = this.productForm.value;
+        demand.itemsCart = [];
 
         this.purchaseOrderService.checkout(demand).subscribe({
             next: (demand: Demand) => {

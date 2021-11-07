@@ -100,7 +100,8 @@ export class PurchaseOrderBindingComponent implements OnInit {
             address,
             number,
             complement,
-            payment
+            payment,
+            itemsCart: []
         };
 
         this.purchaseOrderService.checkout(demand).subscribe({

@@ -5,7 +5,6 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CartService } from '../services/cart.service';
 
 import { ItemCart } from '../shared/cart.model';
-import { Offer } from '../shared/offer.model';
 
 @Component({
     selector: 'app-purchase-order-reactive-module',
@@ -44,15 +43,17 @@ export class PurchaseOrderFormReactiveModuleComponent implements OnInit {
 
     handleItensCart() {
         this.itemsCart = this.cartService.getItemsCart();
-        this.sumPriceTotal = this.cartService.sumPriceTotal();
+        this.handleSumPriceTotal();
     }
 
     handleCheckout() {
         const demand: Demand = this.formProduct.value;
+        demand.itemsCart = this.itemsCart;
 
         this.purchaseOrderService.checkout(demand).subscribe({
             next: (demand: Demand) => {
                 this.idProduct = demand.id;
+                this.cartService.clearCart();
             },
             error: (e) => {
                 console.log(e);
@@ -62,5 +63,15 @@ export class PurchaseOrderFormReactiveModuleComponent implements OnInit {
 
     handleIncreasedItemAmount(itemCart: ItemCart) {
         this.cartService.increasedItemAmount(itemCart);
+        this.handleSumPriceTotal();
+    }
+
+    handleDecreasedItemAmount(itemCart: ItemCart) {
+        this.cartService.decreasedItemAmount(itemCart);
+        this.handleSumPriceTotal();
+    }
+
+    handleSumPriceTotal() {
+        this.sumPriceTotal = this.cartService.sumPriceTotal();
     }
 }

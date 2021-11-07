@@ -40,11 +40,33 @@ export class CartService {
 
     increasedItemAmount(itemCart: ItemCart) {
         const existItem = this.itemsCart.find(
-            (itemCart) => itemCart.id === itemCart.id
+            (itemCartRef) => itemCartRef.id === itemCart.id
         );
 
         if (!existItem) return;
 
         existItem.amount += 1;
+    }
+
+    decreasedItemAmount(itemCart: ItemCart) {
+        const existItem = this.itemsCart.find(
+            (itemCartRef) => itemCartRef.id === itemCart.id
+        );
+
+        if (!existItem) return;
+
+        existItem.amount -= 1;
+
+        if (existItem.amount === 0) {
+            const indexItemSelected = this.itemsCart.indexOf(existItem);
+
+            this.itemsCart.splice(indexItemSelected, 1);
+
+            return;
+        }
+    }
+
+    clearCart() {
+        this.itemsCart = [];
     }
 }

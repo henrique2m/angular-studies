@@ -240,6 +240,54 @@
       "complement": "teste",
       "payment": "debito",
       "id": 8
+    },
+    {
+      "address": "Rua Paracambi",
+      "number": "2360",
+      "complement": "Bueno",
+      "payment": "dinheiro",
+      "itemsCart": [
+        {
+          "id": 1,
+          "title": "Super Burger",
+          "description": "Rodízio de Mini-hambúrger com opção de entrada.",
+          "image": {
+            "url": "/assets/ofertas/1/img1.jpg"
+          },
+          "price": 29.9,
+          "amount": 4
+        },
+        {
+          "id": 3,
+          "title": "Pizzas Grandes",
+          "description": "Pizza Grande, Mussarela, Marguerita ou outras!",
+          "image": {
+            "url": "/assets/ofertas/3/img1.jpg"
+          },
+          "price": 21.9,
+          "amount": 3
+        }
+      ],
+      "id": 9
+    },
+    {
+      "address": "Av. Tocantins",
+      "number": "4444",
+      "complement": "Centro",
+      "payment": "dinheiro",
+      "itemsCart": [
+        {
+          "id": 4,
+          "title": "Estância das águas",
+          "description": "Diversão garantida com piscinas, trilhas e muito mais.",
+          "image": {
+            "url": "/assets/ofertas/4/img1.jpg"
+          },
+          "price": 31.9,
+          "amount": 4
+        }
+      ],
+      "id": 10
     }
   ]
 }
