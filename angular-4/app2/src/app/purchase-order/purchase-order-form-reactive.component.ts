@@ -38,10 +38,10 @@ export class PurchaseOrderFormReactiveModuleComponent implements OnInit {
     ) {}
 
     ngOnInit(): void {
-        this.handleItensCart();
+        this.handleItemsCart();
     }
 
-    handleItensCart() {
+    handleItemsCart() {
         this.itemsCart = this.cartService.getItemsCart();
         this.handleSumPriceTotal();
     }
