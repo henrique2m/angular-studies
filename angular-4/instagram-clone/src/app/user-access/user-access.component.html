@@ -1,13 +1,27 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-6 d-flex justify-content-end">
+    <div
+      class="col-sm-6 d-flex justify-content-end"
+      [@animation-banner]="stateAnimationBanner"
+    >
       <app-banner></app-banner>
     </div>
 
-    <div class="col-sm-6 d-flex justify-content-start">
-      <app-sign-in></app-sign-in>
-
-      <!-- <app-sign-up></app-sign-up> -->
+    <div
+      *ngIf="register; else formSignUp"
+      class="col-sm-6 d-flex justify-content-start"
+      [@animation-main]="stateAnimationMain"
+    >
+      <app-sign-in (signUp)="handleSignUp()"></app-sign-in>
     </div>
+
+    <ng-template #formSignUp>
+      <div
+        class="col-sm-6 d-flex justify-content-start"
+        [@animation-main]="stateAnimationMain"
+      >
+        <app-sign-up (signIn)="handleSignIn()"></app-sign-up>
+      </div>
+    </ng-template>
   </div>
 </div>

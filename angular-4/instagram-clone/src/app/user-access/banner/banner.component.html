@@ -1,3 +1,7 @@
 <div class="banner-background">
-  <img src="/assets/banner/img_1.png" [@slideBanner]="stateAnimationBanner" />
+  <img
+    *ngFor="let image of images"
+    [@slideBanner]="image.state"
+    [src]="image.url"
+  />
 </div>
