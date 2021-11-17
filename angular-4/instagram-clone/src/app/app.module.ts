@@ -13,6 +13,7 @@ import { HomeComponent } from "./user-access/home/home.component";
 import { PostComponent } from "./user-access/home/post/post.component";
 import { RouterModule } from "@angular/router";
 import { ROUTES } from "./app.routes";
+import { AuthGuardService } from "./user-access/shared/services/authGuard.service";
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { ROUTES } from "./app.routes";
     ReactiveFormsModule,
     RouterModule.forRoot(ROUTES),
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuardService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

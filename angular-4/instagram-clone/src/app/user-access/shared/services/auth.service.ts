@@ -6,8 +6,15 @@ import {
 } from "firebase/auth";
 import { getDatabase, ref, set } from "firebase/database";
 import { Login } from "../interfaces/login.model";
+import { Injectable } from "@angular/core";
+import { Router } from "@angular/router";
 
+@Injectable()
 export class AuthService {
+  idToken!: string;
+
+  constructor(private router: Router) {}
+
   signUp(user: User): Promise<any> {
     const { email, name, username, password } = user;
     const auth = getAuth();
@@ -31,9 +38,11 @@ export class AuthService {
 
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        const user = userCredential.user;
+        auth.currentUser?.getIdToken().then((idToken: string) => {
+          this.idToken = idToken;
 
-        console.log(user);
+          this.router.navigate(["/home"]);
+        });
       })
       .catch((error) => console.log(error));
   }
