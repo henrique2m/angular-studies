@@ -1,4 +1,3 @@
-import '../modules/WebSdk';
 import { Component, OnInit } from '@angular/core';
 
 import { FingerprintReader, SampleFormat } from '@digitalpersona/devices';
