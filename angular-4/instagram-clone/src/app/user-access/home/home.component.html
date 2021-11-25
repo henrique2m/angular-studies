@@ -3,9 +3,12 @@
     <div class="logo"></div>
 
     <div>
-      <div class="add-post">
-        <a routerLink="" (click)="logout()" style="margin-left: 35px">Sair</a>
-      </div>
+      <div
+        class="add-post"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+      ></div>
+      <a routerLink="" (click)="logout()" style="margin-left: 35px">Sair</a>
     </div>
   </div>
 </nav>
@@ -13,4 +16,5 @@
 <br /><br /><br />
 <div class="container">
   <app-post></app-post>
+  <app-new-post></app-new-post>
 </div>

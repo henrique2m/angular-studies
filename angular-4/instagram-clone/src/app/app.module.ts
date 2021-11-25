@@ -14,6 +14,8 @@ import { PostComponent } from "./user-access/home/post/post.component";
 import { RouterModule } from "@angular/router";
 import { ROUTES } from "./app.routes";
 import { AuthGuardService } from "./user-access/shared/services/authGuard.service";
+import { NewPostComponent } from "./user-access/home/post/new-post/new-post.component";
+import { PostService } from "./user-access/shared/services/post.service";
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import { AuthGuardService } from "./user-access/shared/services/authGuard.servic
     SignUpComponent,
     HomeComponent,
     PostComponent,
+    NewPostComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,7 @@ import { AuthGuardService } from "./user-access/shared/services/authGuard.servic
     ReactiveFormsModule,
     RouterModule.forRoot(ROUTES),
   ],
-  providers: [AuthService, AuthGuardService],
+  providers: [AuthService, AuthGuardService, PostService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
