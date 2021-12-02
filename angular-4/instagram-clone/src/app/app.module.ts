@@ -16,6 +16,10 @@ import { ROUTES } from "./app.routes";
 import { AuthGuardService } from "./user-access/shared/services/authGuard.service";
 import { NewPostComponent } from "./user-access/home/post/new-post/new-post.component";
 import { PostService } from "./user-access/shared/services/post.service";
+import { AngularFireModule } from "@angular/fire/compat";
+import { AngularFireDatabaseModule } from "@angular/fire/compat/database";
+import { AngularFireStorageModule } from "@angular/fire/compat/storage";
+import { environment } from "../environments/environment";
 
 @NgModule({
   declarations: [
@@ -33,6 +37,9 @@ import { PostService } from "./user-access/shared/services/post.service";
     BrowserAnimationsModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFireStorageModule,
     RouterModule.forRoot(ROUTES),
   ],
   providers: [AuthService, AuthGuardService, PostService],

@@ -19,7 +19,25 @@
           ></button>
         </div>
         <div class="modal-body">
+          <input
+            type="file"
+            class="form-control"
+            accept="image/*"
+            (change)="handleImageUpload($event)"
+          />
           <input class="form-control" formControlName="title" />
+          <div class="progress mt-2" *ngIf="percentage !== 0">
+            <div
+              class="progress-bar progress-bar-info"
+              role="progressbar"
+              attr.aria-valuenow="{{ percentage }}"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              [ngStyle]="{ width: percentage + '%' }"
+            >
+              {{ percentage }}%
+            </div>
+          </div>
         </div>
         <div class="modal-footer">
           <button

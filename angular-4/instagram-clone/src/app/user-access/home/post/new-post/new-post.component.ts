@@ -11,6 +11,10 @@ import { PostService } from "src/app/user-access/shared/services/post.service";
 export class NewPostComponent implements OnInit {
   emailUserAuth: any;
 
+  image: any;
+
+  percentage: number = 0;
+
   formNewPost: FormGroup = new FormGroup({
     title: new FormControl(null),
   });
@@ -33,8 +37,31 @@ export class NewPostComponent implements OnInit {
     const post: Post = {
       email: this.emailUserAuth,
       title: this.formNewPost.get("title")?.value,
+      image: this.image,
     };
 
     this.postService.create(post);
+    this.imageUpload();
+  }
+
+  handleImageUpload(event: Event) {
+    const inputFile = event.target as HTMLInputElement;
+
+    if (!inputFile.files) return;
+
+    this.image = inputFile.files[0];
+  }
+
+  imageUpload() {
+    if (this.image) {
+      this.postService.upload(this.image).subscribe(
+        (percentage) => {
+          this.percentage = Math.round(percentage ? percentage : 0);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    }
   }
 }
