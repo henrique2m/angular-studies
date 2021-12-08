@@ -6,7 +6,13 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./post.component.css"],
 })
 export class PostComponent implements OnInit {
+  posts!: any[];
   constructor() {}
 
   ngOnInit(): void {}
+
+  loadPosts(posts: any[]) {
+    this.posts = posts;
+    console.log(posts);
+  }
 }
