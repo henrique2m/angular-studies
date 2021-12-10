@@ -1,5 +1,11 @@
 import { Injectable } from "@angular/core";
-import { getDatabase, push, ref, onValue } from "@firebase/database";
+import {
+  getDatabase,
+  push,
+  ref,
+  onValue,
+  orderByKey,
+} from "@firebase/database";
 import { AngularFireStorage } from "@angular/fire/compat/storage";
 import { Post } from "../interfaces/post.model";
 import { finalize } from "rxjs/operators";
