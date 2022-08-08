@@ -1,0 +1,13 @@
+<section class="container">
+  <ul>
+    <li *ngFor="let user of users">
+      <img src="{{ user.avatar }}" alt="{{ user.name }}" />
+      <div class="user-info">
+        <strong> {{ user.name }} </strong>
+        <small>
+          {{ user.email }}
+        </small>
+      </div>
+    </li>
+  </ul>
+</section>
