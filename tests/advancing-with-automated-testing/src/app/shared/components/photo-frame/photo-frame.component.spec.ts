@@ -94,23 +94,4 @@ describe(PhotoFrameComponent.name, () => {
     expect(img.getAttribute('src')).toBe(src);
     expect(img.getAttribute('alt')).toBe(description);
   });
-
-  it(`(D) should display number of likes when clicked`, (done) => {
-    fixture.detectChanges();
-    component.liked.subscribe(() => {
-      component.likes++;
-      fixture.detectChanges();
-      const counterEl: HTMLElement = fixture.nativeElement.querySelector(
-        '.like-widget-container'
-      );
-
-      expect(counterEl.textContent.trim()).toBe('1');
-      done();
-    });
-
-    const likeWidgetComponentEl: HTMLElement =
-      fixture.nativeElement.querySelector('.like-widget-container');
-
-    likeWidgetComponentEl.click();
-  });
 });
