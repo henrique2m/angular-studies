@@ -1,19 +1,19 @@
-import { Component } from '@angular/core';
+import { PhotoBoardService } from './shared/components/photo-board/services/photo-board.service';
+import { Observable } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { IPhoto } from './shared/components/photo-board/interfaces/photo';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
-  title = 'Angular testing';
-  public likes = 0;
+export class AppComponent implements OnInit {
+  public photos$: Observable<IPhoto[]>;
 
-  public like(): void {
-    this.likes++;
-  }
+  constructor(private _photoBoardService: PhotoBoardService) {}
 
-  get generatedPhotos(): string[] {
-    return '1234563412312312331233123123345447312345223'.split('');
+  ngOnInit(): void {
+    this.photos$ = this._photoBoardService.getPhotos();
   }
 }

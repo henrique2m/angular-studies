@@ -1,11 +1,1 @@
-<section class="container">
-  <div class="content">
-    <app-photo-frame
-      *ngFor="let photo of generatedPhotos; let i = index"
-      src="https://picsum.photos/100/200?random={{ i }}"
-      description="Some description"
-      [likes]="likes"
-      (liked)="like()"
-    ></app-photo-frame>
-  </div>
-</section>
+<app-photo-board [photos]="photos$ | async"></app-photo-board>
