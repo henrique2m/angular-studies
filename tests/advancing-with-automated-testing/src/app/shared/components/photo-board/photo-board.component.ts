@@ -22,7 +22,7 @@ export class PhotoBoardComponent implements OnChanges {
     this.rows = this.groupColumns(changes.photos.currentValue);
   }
 
-  public groupColumns(photos: IPhoto[]): any[][] {
+  private groupColumns(photos: IPhoto[]): any[][] {
     const newRows = [];
     const step = 4;
 
