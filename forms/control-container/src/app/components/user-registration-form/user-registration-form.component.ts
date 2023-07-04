@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-user-registration-form',
@@ -12,16 +12,30 @@ export class UserRegistrationFormComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
+    this.initForm();
+  }
+
+  private initForm(): void {
     this.form = this.formBuilder.group({
-      personForm: this.formBuilder.group({
-        name: '',
-        lastName: '',
-      }),
-      addressForm: this.formBuilder.group({
-        city: '',
-        street: '',
-        number: '',
-      }),
+      personForm: this.personForm(),
+      addressForm: this.addressForm(),
+    });
+  }
+
+  private personForm(): FormGroup {
+    const { required } = Validators;
+    return this.formBuilder.group({
+      name: '',
+      lastName: '',
+      email: ['', [required]],
+    });
+  }
+
+  private addressForm(): FormGroup {
+    return this.formBuilder.group({
+      city: '',
+      street: '',
+      number: '',
     });
   }
 
