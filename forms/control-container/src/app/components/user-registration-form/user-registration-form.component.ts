@@ -15,23 +15,23 @@ export class UserRegistrationFormComponent implements OnInit {
     this.initForm();
   }
 
-  private initForm(): void {
+  initForm(): void {
     this.form = this.formBuilder.group({
       personForm: this.personForm(),
       addressForm: this.addressForm(),
     });
   }
 
-  private personForm(): FormGroup {
+  personForm(): FormGroup {
     const { required } = Validators;
     return this.formBuilder.group({
       name: '',
       lastName: '',
-      email: ['', [required]],
+      email: ['', required],
     });
   }
 
-  private addressForm(): FormGroup {
+  addressForm(): FormGroup {
     return this.formBuilder.group({
       city: '',
       street: '',
